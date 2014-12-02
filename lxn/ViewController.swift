@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate {
 
+    
+    @IBOutlet weak var outLabel: UILabel! = UILabel()
+    
+    var CurrentCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func addOneBUtton(sender: UIButton) {
+        
+        CurrentCount = CurrentCount + 1
+        outLabel.text = "The button has been clicked \(CurrentCount) number of times"
+        outLabel.textColor = UIColor.redColor()
+        
+    }
+    
+    
+    
 
 }
 
